@@ -1,5 +1,4 @@
 import streamlit as st
-from pytube import YouTube
 import os
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
