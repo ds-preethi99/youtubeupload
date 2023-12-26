@@ -13,11 +13,13 @@ db_auth_uri = st.secrets["db_credentials"]["auth_uri"]
 db_token_uri = st.secrets["db_credentials"]["token_uri"]
 
 info_dict = {
+    "auth_provider_x509_cert_url": db_auth_provider_x509_cert_url,
+    "auth_uri": db_auth_uri,
     "client_id": db_client_id,
     "client_secret": db_client_secret,
-    "redirect_uris": db_redirect_uris,
-    "auth_uri": db_auth_uri,
-    "token_uri": db_token_uri
+    "project_id": db_project_id"
+    "redirect_uris": "db_project_id"
+    "token_uri": "db_token_uri"
 }
 
 # Function to authenticate and get YouTube service
