@@ -41,11 +41,13 @@ def authenticate_youtube():
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
-            flow = InstalledAppFlow.from_client_config(
-                info_dict,
-                scopes,
-                redirect_uri='urn:ietf:wg:oauth:2.0:oob:auto'
-            )
+            # flow = InstalledAppFlow.from_client_config(
+            #     info_dict,
+            #     scopes,
+            #     redirect_uri='urn:ietf:wg:oauth:2.0:oob:auto'
+            # )
+            flow = InstalledAppFlow.from_client_secrets_file(
+                'client_secret.json', scopes)
             creds = flow.run_local_server(port=0)
 
         # Save the credentials for the next run
