@@ -25,10 +25,6 @@ info_dict = {
 }
 
 # Function to authenticate and get YouTube service
-import os
-import pickle
-from google_auth_oauthlib.flow import InstalledAppFlow
-from googleapiclient.discovery import build
 
 def authenticate_youtube():
     scopes = ["https://www.googleapis.com/auth/youtube.upload"]
@@ -47,7 +43,6 @@ def authenticate_youtube():
             flow = InstalledAppFlow.from_client_config(
                 info_dict,
                 scopes=scopes,
-                #redirect_uri=info_dict["redirect_uris"][0]  # Use the first redirect URI
             )
             creds = flow.run_local_server(port=0)
 
