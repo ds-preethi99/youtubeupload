@@ -8,14 +8,14 @@ import pickle
 
 db_client_id = st.secrets["db_credentials"]["client_id"]
 db_client_secret = st.secrets["db_credentials"]["client_secret"]
-db_redirect_uris = st.secrets["db_credentials"]["redirect_uris"]
+#db_redirect_uris = st.secrets["db_credentials"]["redirect_uris"]
 db_auth_uri = st.secrets["db_credentials"]["auth_uri"]
 db_token_uri = st.secrets["db_credentials"]["token_uri"]
 
 info_dict = {
     "client_id": db_client_id,
     "client_secret": db_client_secret,
-    "redirect_uris": db_redirect_uris,
+    #"redirect_uris": db_redirect_uris,
     "auth_uri": db_auth_uri,
     "token_uri": db_token_uri
 }
@@ -43,7 +43,7 @@ def authenticate_youtube():
             flow = InstalledAppFlow.from_client_config(
                 info_dict,
                 scopes=scopes,
-                redirect_uri=info_dict["redirect_uris"][0]  # Use the first redirect URI
+                #redirect_uri=info_dict["redirect_uris"][0]  # Use the first redirect URI
             )
             creds = flow.run_local_server(port=0)
 
