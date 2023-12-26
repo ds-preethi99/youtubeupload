@@ -26,6 +26,7 @@ info_dict = {
 
 # Function to authenticate and get YouTube service
 
+# Function to authenticate and get YouTube service
 def authenticate_youtube():
     scopes = ["https://www.googleapis.com/auth/youtube.upload"]
     creds = None
@@ -42,7 +43,8 @@ def authenticate_youtube():
         else:
             flow = InstalledAppFlow.from_client_config(
                 info_dict,
-                scopes=scopes,
+                scopes,
+                redirect_uri='urn:ietf:wg:oauth:2.0:oob:auto'
             )
             creds = flow.run_local_server(port=0)
 
