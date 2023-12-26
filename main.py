@@ -6,6 +6,21 @@ from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
 import pickle
 
+db_type = st.secrets["db_credentials"]["type"]
+db_client_id = st.secrets["db_credentials"]["client_id"]
+db_client_secret = st.secrets["db_credentials"]["client_secret"]
+db_redirect_uris = st.secrets["db_credentials"]["redirect_uris"]
+db_auth_uri = st.secrets["db_credentials"]["auth_uri"]
+db_token_uri = st.secrets["db_credentials"]["token_uri"]
+
+info_dict = {
+    "type": db_type,
+    "client_id": db_client_id,
+    "client_secret": db_client_secret,
+    "redirect_uris": db_redirect_uris,
+    "auth_uri": db_auth_uri,
+    "token_uri": db_token_uri
+}
 
 # Function to authenticate and get YouTube service
 def authenticate_youtube():
